@@ -1,0 +1,36 @@
+.container {
+  height: 100vh;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container section {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.25rem;
+  align-content: center;
+
+  margin-top: 2rem;
+}
+
+/* Telefones em paisagem e abaixo */
+@media (max-width: 480px) {
+  .container section {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Telefones em paisagem a tablet em retrato */
+@media (max-width: 767px) {
+  .container section {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

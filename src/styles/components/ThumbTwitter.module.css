@@ -1,0 +1,80 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  padding-left: 10.25rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+
+  background: var(--background);
+}
+
+.sectionLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.sectionLeft header {
+  background: url("/icons/levelup.svg") no-repeat center;
+  background-size: contain;
+}
+.sectionLeft header span {
+  font-size: 19.125rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.sectionLeft strong {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.sectionRight {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sectionRight .challenges,
+.sectionRight .experience {
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: 1px solid var(--gray-line);
+  margin-bottom: 1rem;
+}
+
+.sectionRight .challenges span,
+.sectionRight .experience span {
+  color: #c3c9ff;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.sectionRight .challenges strong,
+.sectionRight .challenges strong span,
+.sectionRight .experience strong,
+.sectionRight .experience strong span {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.sectionRight .challenges strong,
+.sectionRight .experience strong {
+  color: var(--text);
+}
+
+.sectionRight .challenges strong span,
+.sectionRight .experience strong span {
+  color: var(--blue);
+}
+
+.sectionRight div img {
+  margin-top: 6rem;
+}
