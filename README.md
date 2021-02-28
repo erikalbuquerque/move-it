@@ -23,7 +23,7 @@ This project was made using the follow technologies:
 # How to run
 ```bash
 # Clone Repository
-$ git clone https://github.com/erikalbuquerque/move.it.git
+$ git clone https://github.com/erikalbuquerque/move-it.git
 ```
 
 ### 💻 Run Web Project
