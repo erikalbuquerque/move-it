@@ -7,13 +7,11 @@ export function CompletedChallenges() {
   const { challengesCompleted } = useContext(ChallengesContext);
   const { darkTheme } = useContext(ThemeContext);
 
+  const darkMode = darkTheme ? styles.dark : "";
+
   return (
     <div
-      className={styles.completedChallengesContainer}
-      style={{
-        color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-        borderBottom: `1px solid ${darkTheme ? "var(--blue)" : "#d7d8da"}`,
-      }}
+      className={`${styles.completedChallengesContainer} ${darkMode}`}
     >
       <span>Desafios completos</span>
       <span>{challengesCompleted}</span>

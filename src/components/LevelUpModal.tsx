@@ -11,37 +11,18 @@ export function LevelUpModal() {
 
   const { darkTheme } = useContext(ThemeContext);
 
+  const darkMode = darkTheme ? styles.dark : "";
+
   const router = useRouter();
 
   return (
-    <div
-      className={styles.overlay}
-      style={{
-        background: `${
-          darkTheme ? "rgba(0, 0, 0, 0.8" : "rgba(242, 243, 245, 0.8"
-        }`,
-      }}
-    >
-      <div
-        className={styles.container}
-        style={{
-          background: `${
-            darkTheme ? "var(--background-container-dark)" : "var(--white)"
-          }`,
-          color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-        }}
-      >
+    <div className={`${styles.overlay} ${darkMode}`}>
+      <div className={`${styles.container} ${darkMode}`}>
         <header>
           <span>{level}</span>
         </header>
 
-        <strong
-          style={{
-            color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-          }}
-        >
-          Parabéns
-        </strong>
+        <strong>Parabéns</strong>
         <p>Você alcançou um novo level.</p>
 
         <button
@@ -55,12 +36,6 @@ export function LevelUpModal() {
         <button
           type="button"
           className={styles.shareOnTwitter}
-          style={{
-            background: `${
-              darkTheme ? "var(--background-container-dark)" : "##f5fcff"
-            }`,
-            borderTop: `1px solid ${darkTheme ? "#333335" : "#dcdde0"}`,
-          }}
           onClick={() => router.push("/share/level")}
         >
           Compartilhar no Twitter <FaTwitter size={24} />

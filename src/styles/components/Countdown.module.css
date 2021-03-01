@@ -6,6 +6,10 @@
   color: var(--text);
 }
 
+.countdownContainer.dark {
+  color: var(--white);
+}
+
 .countdownContainer > div {
   flex: 1;
 
@@ -20,8 +24,25 @@
   text-align: center;
 }
 
+.countdownContainer.dark > div {
+  background-color: var(--background-container-dark);
+}
+
 .countdownContainer > div span {
   flex: 1;
+}
+
+.countdownContainer > div span:first-child {
+  border-right: 1px solid #f0f1f3;
+}
+
+.countdownContainer > div span:last-child {
+  border-left: 1px solid #f0f1f3;
+}
+
+.countdownContainer.dark > div span:first-child,
+.countdownContainer.dark > div span:last-child {
+  border-color: #333335 !important;
 }
 
 .countdownContainer > span {
@@ -61,6 +82,12 @@
   color: var(--title);
 }
 
+.countdownButtonActive.dark {
+  background: var(--background-container-dark);
+  color: var(--white);
+}
+
+
 .countdownButtonActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
@@ -70,6 +97,11 @@
   color: var(--text);
   cursor: not-allowed;
   border-bottom: 4px solid var(--green);
+}
+
+.countdownButton.dark:disabled {
+  background: var(--background-container-dark);
+  color: var(--white);
 }
 
 .countdownButton:disabled svg {
@@ -85,6 +117,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .progressBar {
   flex: 1;
   height: 4px;

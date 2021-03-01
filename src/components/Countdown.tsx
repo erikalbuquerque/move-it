@@ -22,70 +22,24 @@ export function Countdown() {
 
   const { darkTheme } = useContext(ThemeContext);
 
+  const darkMode = darkTheme ? styles.dark : "";
+
   return (
     <div>
-      <div
-        className={styles.countdownContainer}
-        style={{ color: `${darkTheme ? "var(--white)" : "var(--text)"}` }}
-      >
-        <div
-          style={{
-            background: `${
-              darkTheme ? "var(--background-container-dark)" : "var(--white)"
-            }`,
-          }}
-        >
-          <span
-            style={{
-              borderRight: `1px solid ${darkTheme ? "#333335" : "#f0f1f3"}`,
-            }}
-          >
-            {minuteLeft}
-          </span>
-          <span
-            style={{
-              borderLeft: `1px solid ${darkTheme ? "#333335" : "#f0f1f3"}`,
-            }}
-          >
-            {minuteRight}
-          </span>
+      <div className={`${styles.countdownContainer} ${darkMode}`}>
+        <div>
+          <span>{minuteLeft}</span>
+          <span>{minuteRight}</span>
         </div>
         <span>:</span>
-        <div
-          style={{
-            background: `${
-              darkTheme ? "var(--background-container-dark)" : "var(--white)"
-            }`,
-          }}
-        >
-          <span
-            style={{
-              borderRight: `1px solid ${darkTheme ? "#333335" : "#f0f1f3"}`,
-            }}
-          >
-            {secondLeft}
-          </span>
-          <span
-            style={{
-              borderLeft: `1px solid ${darkTheme ? "#333335" : "#f0f1f3"}`,
-            }}
-          >
-            {secondRight}
-          </span>
+        <div>
+          <span>{secondLeft}</span>
+          <span>{secondRight}</span>
         </div>
       </div>
 
       {hasFinished ? (
-        <button
-          disabled
-          className={styles.countdownButton}
-          style={{
-            background: `${
-              darkTheme ? "var(--background-container-dark)" : "var(--white)"
-            }`,
-            color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-          }}
-        >
+        <button disabled className={`${styles.countdownButton} ${darkMode}`}>
           Ciclo encerrado
           <FaCheckCircle />
         </button>
@@ -93,14 +47,8 @@ export function Countdown() {
         <div className={styles.countdownButtonContainer}>
           <button
             type="button"
-            className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+            className={`${styles.countdownButton} ${styles.countdownButtonActive} ${darkMode}`}
             onClick={resetCountdown}
-            style={{
-              background: `${
-                darkTheme ? "var(--background-container-dark)" : "var(--white)"
-              }`,
-              color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-            }}
           >
             Abandonar ciclo
             <AiOutlineClose size={20} />

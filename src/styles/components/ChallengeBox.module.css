@@ -2,6 +2,7 @@
   height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
   padding: 1.5rem 2rem;
 
   display: flex;
@@ -9,6 +10,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.challengeBoxContainer.dark {
+  background-color: var(--background-container-dark);
+  color: var(--white);
 }
 
 .challengeNotActive {
@@ -48,6 +54,10 @@
   font-size: 1.25rem;
   padding: 0 2rem 1.5rem;
   border-bottom: 1px solid var(--gray-line);
+}
+
+.dark .challengeActive header {
+  border-color: var(--purple);
 }
 
 .challengeActive main {
@@ -95,7 +105,7 @@
 .challengeActive footer button.challengeFailedButton {
   background: var(--red);
 }
-.challengeActive footer button.challengeSucceededButton {
+.challengeActive footer button.challengeSuccededButton {
   background: var(--green);
 }
 

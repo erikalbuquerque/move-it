@@ -3,6 +3,10 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  color: var(--text);
+}
+.container.dark {
+  color: var(--white);
 }
 .experienceBar {
   display: flex;
@@ -49,9 +53,15 @@ span.currentExperience {
   height: 1.08rem;
   border-radius: 1.25rem;
   position: relative;
+
+  background: var(--blue);
+}
+.switchButton.dark{
+  background: var(--white);
 }
 
 .switchButton div {
+  background: var(--white);
   transition: background 0.2s;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
@@ -60,4 +70,8 @@ span.currentExperience {
   height: 0.7rem;
   position: absolute;
   border-radius: 50%;
+}
+
+.switchButton.dark div {
+  background: var(--background-dark);
 }

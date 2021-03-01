@@ -7,6 +7,8 @@ import styles from "../styles/components/ChallengeBox.module.css";
 export function ChallengeBox() {
   const { darkTheme } = useContext(ThemeContext);
 
+  const darkMode = darkTheme ? styles.dark : "";
+
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(
     ChallengesContext
   );
@@ -24,24 +26,10 @@ export function ChallengeBox() {
   }
 
   return (
-    <div
-      className={styles.challengeBoxContainer}
-      style={{
-        background: `${darkTheme ? "#282828" : "var(--white)"}`,
-        color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-      }}
-    >
+    <div className={`${styles.challengeBoxContainer} ${darkMode}`}>
       {activeChallenge ? (
         <div className={styles.challengeActive}>
-          <header
-            style={{
-              borderBottom: `1px solid ${
-                darkTheme ? "var(--blue)" : "#d7d8da"
-              }`,
-            }}
-          >
-            Ganhe {activeChallenge.amount} xp
-          </header>
+          <header>Ganhe {activeChallenge.amount}XP</header>
 
           <main>
             <img src={`icons/${activeChallenge.type}.svg`} />
@@ -57,9 +45,10 @@ export function ChallengeBox() {
             >
               Falhei
             </button>
+
             <button
               type="button"
-              className={styles.challengeSucceededButton}
+              className={styles.challengeSuccededButton}
               onClick={handleChallengeSucceeded}
             >
               Completei
@@ -67,16 +56,11 @@ export function ChallengeBox() {
           </footer>
         </div>
       ) : (
-        <div
-          className={styles.challengeNotActive}
-          style={{
-            color: `${darkTheme ? "var(--white)" : "var(--text)"}`,
-          }}
-        >
+        <div className={styles.challengeNotActive}>
           <strong>Finalize um ciclo para receber um desafio</strong>
           <p>
             <img src="icons/level-up.svg" alt="Level Up" />
-            Avance de level completando desafios.
+            Avance de Level Completando desafios
           </p>
         </div>
       )}

@@ -10,14 +10,13 @@ export function ExperienceBar() {
 
   const { darkTheme, setTheme } = useContext(ThemeContext);
 
+  const darkMode = darkTheme ? styles.dark : "";
+
   const percentToNextLevel =
     Math.round(currentExperience * 100) / experienceToNextLevel;
 
   return (
-    <div
-      className={styles.container}
-      style={{ color: `${darkTheme ? "var(--white)" : "var(--text)"}` }}
-    >
+    <div className={`${styles.container} ${darkMode}`}>
       <header className={styles.experienceBar}>
         <span>0 xp</span>
         <div>
@@ -36,19 +35,10 @@ export function ExperienceBar() {
         </div>
         <span>{experienceToNextLevel} xp</span>
       </header>
-      <div
-        className={styles.switchButton}
-        onClick={setTheme}
-        style={{
-          background: `${darkTheme ? "var(--white)" : "var(--blue)"}`,
-        }}
-      >
+      <div className={`${styles.switchButton} ${darkMode}`} onClick={setTheme}>
         <div
           style={{
             left: `${darkTheme ? "1rem" : "0rem"}`,
-            background: `${
-              darkTheme ? "var(--background-dark)" : "var(--white)"
-            }`,
           }}
         ></div>
       </div>

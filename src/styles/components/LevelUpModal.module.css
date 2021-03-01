@@ -5,9 +5,15 @@
   left: 0;
   right: 0;
 
+  background-color: rgba(242, 243, 245, 0.8);
+
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.overlay.dark {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .container {
@@ -19,6 +25,12 @@
   box-shadow: 0 8 68px rgba(0, 0, 0, 0.05);
   text-align: center;
   position: relative;
+
+  background-color: var(--white);
+}
+
+.dark .container {
+  background-color: var(--background-dark);
 }
 
 .container header {
@@ -34,9 +46,23 @@
 }
 
 .container strong {
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   color: var(--text);
   margin-top: 0.25rem;
+}
+
+.dark .container strong {
+  color: var(--blue);
+}
+
+.container p {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-top: 0;
+}
+
+.dark .container p {
+  color: var(--white);
 }
 
 .container button.closeLevelUpModal {
@@ -56,10 +82,18 @@
   border: 0;
 
   color: var(--blue-twitter);
+  background: var(--white);
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  border-top: 1px solid var(--gray-line);
+}
+
+.dark .container button.shareOnTwitter {
+  background: var(--background-dark);
+  border-color: var(--background-container-dark);
 }
 
 .container button.shareOnTwitter svg {
